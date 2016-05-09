@@ -1,0 +1,6 @@
+repl:
+  build: .
+  volumes:
+    - .:/usr/src/app
+  working_dir: /usr/src/app
+  command: "lein repl"
