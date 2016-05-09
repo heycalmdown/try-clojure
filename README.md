@@ -3,10 +3,10 @@
 ## Docker로 개발 환경 만들기
 
 ```bash
-$ docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app clojure lein new clj-helloworld
-$ cd clj-helloworld
+$ docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app clojure lein new try-clojure
+$ cd try-clojure
 $ vi project.clj
-$ vi src/clj_helloworld/core.clj
+$ vi src/try-clojure/core.clj
 $ docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app clojure lein run
 ```
 
