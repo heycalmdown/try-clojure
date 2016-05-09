@@ -1,14 +1,22 @@
 # try-clojure
 
-A Clojure library designed to ... well, that part is up to you.
+## Docker로 개발 환경 만들기
 
-## Usage
+```bash
+$ docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app clojure lein new clj-helloworld
+$ cd clj-helloworld
+$ vi project.clj
+$ vi src/clj_helloworld/core.clj
+$ docker run -it --rm -v "$PWD":/usr/src/app -w /usr/src/app clojure lein run
+```
 
-FIXME
+이렇게 하면 개발 환경 만들기 쉽다.
 
-## License
 
-Copyright © 2016 FIXME
+## Docker와 Atom과 nREPL
 
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
+```bash
+$ docker run -it --rm -p 12345:12345 clojure lein repl :headless :host 0.0.0.0 :port 12345
+```
+
+Atom에서 [proto-repl](https://atom.io/packages/proto-repl)을 설치한다. Remote Nrepl Connection 설정을 해준다.
